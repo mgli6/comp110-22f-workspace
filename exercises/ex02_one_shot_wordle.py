@@ -1,5 +1,5 @@
 """EX02-One-shot Wordle."""
-___author___ = "730571410"
+__author__ = "730571410"
 
 secret_word: str = "python"
 
@@ -15,13 +15,13 @@ GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
 while len(guess) != len(secret_word):
-    guess: str = input("That was not 6-letters! Try again: ")
+    guess = input("That was not 6-letters! Try again: ")
 
 while index < len(secret_word):
     if secret_word[index] == guess[index]:
         result += GREEN_BOX
     else:
-        while wrong_place == False and index_yellow < len(secret_word):
+        while wrong_place is False and index_yellow < len(secret_word):
             if guess[index] == secret_word[index_yellow]:
                 result += YELLOW_BOX
                 wrong_place = True
@@ -40,10 +40,3 @@ if secret_word == guess:
     print("Woo! You got it!")
 else:
     print("Not quite. Play again soon!")
-
-
-
-
-
-
-
