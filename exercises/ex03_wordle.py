@@ -4,9 +4,8 @@ __author__ = "730571410"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-
 def contains_char(secret_word: str, guess: str) -> bool:
-    """Searches for guess within secret_word"""
+    """Searches for guess within secret_word."""
     assert len(guess) == 1
     i: int = 0
     while i < len(secret_word):
@@ -15,9 +14,8 @@ def contains_char(secret_word: str, guess: str) -> bool:
         else:
             i += 1
     return False
-
 def emojified(guess: str, secret_word: str) -> str:
-    """Returns white, yellow, or green boxes depending on the accuracy of the guess"""
+    """Returns white, yellow, or green boxes depending on the accuracy of the guess."""
     assert len(guess) == len(secret_word)
     result: str = ""
     i: int = 0
@@ -30,14 +28,12 @@ def emojified(guess: str, secret_word: str) -> str:
             result += WHITE_BOX 
         i += 1
     return result
-
 def input_guess(expected_length: int) -> str:
-    """Returns a message asking for a word the length of the inputted integer"""
+    """Returns a message asking for a word the length of the inputted integer."""
     guess: str = input(f"Enter a {expected_length} character word: ")
     while len(guess) != expected_length:
         guess = input(f"That wasn't {expected_length} chars! Try again: ")
     return guess
-
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     secret_word: str = "codes"
@@ -55,6 +51,5 @@ def main() -> None:
             turn += 1
         if turn == turn_limit:
             print(f"X/{turn_limit} - Sorry, try again tomorrow!")
-        
 if __name__ == "__main__":
     main()
