@@ -32,6 +32,8 @@ def max(nums: list[int]) -> int:
 def is_equal(x: list[int], y: list[int]) -> bool:
     """Checks if every element at every index is equal in 2 lists"""
     i: int = 0
+    if len(x) != len(y):
+        return False
     while i < len(x) and i < len(y):
         if x[i] == y[i]:
             i += 1
