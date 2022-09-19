@@ -1,6 +1,7 @@
 """EX03-Wordle."""
 __author__ = "730571410"
 
+
 def all(grp: list[int], num: int) -> bool:
     """Checks if all integers in a list match a certain number.""" 
     i: int = 0
@@ -30,7 +31,7 @@ def max(nums: list[int]) -> int:
 
 
 def is_equal(x: list[int], y: list[int]) -> bool:
-    """Checks if every element at every index is equal in 2 lists"""
+    """Checks if every element at every index is equal in 2 lists."""
     i: int = 0
     if len(x) != len(y):
         return False
