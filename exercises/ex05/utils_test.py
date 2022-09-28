@@ -12,7 +12,7 @@ def test_only_evens_edge_case_no_evens() -> None:
 
 def test_only_evens_use_case_many_items() -> None:
     """Use case #1 list with multiple items."""
-    xs: list[int] = [1, 2 , 3]
+    xs: list[int] = [1, 2, 3]
     assert only_evens(xs) == [2]
 
 

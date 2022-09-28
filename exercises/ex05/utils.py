@@ -21,8 +21,7 @@ def concat(xs: list[int], ys: list[int]):
     return new_list
     
 
-    
-def sub(xs: list[int], start: int, end:int):
+def sub(xs: list[int], start: int, end: int):
     """Returns a list that is a subset of a list between a specified start index and end index - 1."""
     i: int = start
     new_list: list[int] = []
