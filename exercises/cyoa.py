@@ -1,7 +1,6 @@
 """EX06-CYOA."""
 __author__ = "730571410"
 
-
 points: int = 0
 player: str = ""
 hp: int = 20
@@ -17,7 +16,6 @@ SHIELD: str = "\U0001F6E1"
 MONSTER: str = "\U0001F479"
 
 
-
 def greet() -> None:
     """Greeting message."""
     global player 
@@ -29,6 +27,7 @@ def greet() -> None:
 
 
 def new_room() -> None:
+    """Path for the option of entering a new room."""
     global points
     have_key: bool = False
     have_gem: bool = False
@@ -62,10 +61,10 @@ def new_room() -> None:
         choice_turn: str = input("1. Turn left \n2. Turn right\n")
         if choice_turn == "1":
             print("You turn left and follow the path to find a locked chest")
-            if playing_chest == True:
+            if playing_chest is True:
                 print("Adventure points +1")
                 points += 1
-            if have_key == True:
+            if have_key is True:
                 print("Would you like to try and open the chest with the key?")
                 choice_chest: str = input("1. Open chest\n2. Return start of path\n")
                 if choice_chest == "1":
@@ -88,7 +87,7 @@ def new_room() -> None:
             if playing_gem == True:
                 print("Adventure points +1")
                 points += 1
-            if have_gem == True:
+            if have_gem is True:
                 print("Would you like to place the strange gem in the empty socket?")
                 choice_eye: str = input("1. Place gem\n2. Return start of path\n")
                 if choice_eye == "1":
@@ -112,8 +111,8 @@ def new_room() -> None:
     return
 
 
-
 def combat(pts:int) -> int:
+    """Combat sequence for fighting the monster."""
     points: int = pts
     monster_hp: int = 20
     monster_counter: int = 20
@@ -134,14 +133,14 @@ def combat(pts:int) -> int:
     else:
         new_hp: int = 20
     while in_combat == True:
-        if new_hp >= 0 and in_combat == True:
+        if new_hp >= 0 and in_combat is True:
             new_hp -= randint(1, 5)
             print(f"The monster did {hp - new_hp} damage!")
             hp = hp - (hp - new_hp)
             input(f"You have {hp}hp remaining! (Press enter to continue)")
         if monster_hp <= 0 or hp <= 0: 
                 in_combat = False
-        if monster_counter >= 0 and in_combat == True:
+        if monster_counter >= 0 and in_combat is True:
             monster_counter -= randint(1, atk)
             print(f"You attack and deal {monster_hp - monster_counter} damage!")
             monster_hp = monster_hp - (monster_hp - monster_counter)
@@ -158,7 +157,6 @@ def combat(pts:int) -> int:
         input("You lose! (Press enter to continue)")
         print("Game over")
     return points
-
 
 
 def main() -> None:
@@ -204,6 +202,5 @@ def main() -> None:
 
         
     
-
 if __name__ == "__main__":
     main()
