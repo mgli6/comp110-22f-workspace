@@ -25,7 +25,6 @@ def greet() -> None:
     print("Do not leave without the treasure.")
 
 
-
 def new_room() -> None:
     """Path for the option of entering a new room."""
     global points
@@ -56,7 +55,7 @@ def new_room() -> None:
         print("Adventure points + 1")
         points += 1
     print("You hear a rumbling noise")
-    while playing_chest == True and playing_gem == True:
+    while playing_chest is True and playing_gem is True:
         print("The path branches left and right")
         choice_turn: str = input("1. Turn left \n2. Turn right\n")
         if choice_turn == "1":
@@ -84,7 +83,7 @@ def new_room() -> None:
                 print("The rumbling gets louder")
         if choice_turn == "2":
             print("You turn right and follow the path to find a statue of a soldier with a missing eye")
-            if playing_gem == True:
+            if playing_gem is True:
                 print("Adventure points +1")
                 points += 1
             if have_gem is True:
@@ -111,7 +110,7 @@ def new_room() -> None:
     return
 
 
-def combat(pts:int) -> int:
+def combat(pts:int) -> int: 
     """Combat sequence for fighting the monster."""
     points: int = pts
     monster_hp: int = 20
@@ -139,14 +138,14 @@ def combat(pts:int) -> int:
             hp = hp - (hp - new_hp)
             input(f"You have {hp}hp remaining! (Press enter to continue)")
         if monster_hp <= 0 or hp <= 0: 
-                in_combat = False
+            in_combat = False
         if monster_counter >= 0 and in_combat is True:
             monster_counter -= randint(1, atk)
             print(f"You attack and deal {monster_hp - monster_counter} damage!")
             monster_hp = monster_hp - (monster_hp - monster_counter)
             input(f"The monster has {monster_hp}hp remaining! (Press enter to continue)")
         if monster_hp <= 0 or hp <= 0: 
-                in_combat = False
+            in_combat = False
     if monster_hp <= 0:
         input("The monster has been defeated! (Press enter to continue)")
         print("Adventure points +5")
@@ -167,7 +166,7 @@ def main() -> None:
     global armor
     playing: bool = True
     greet()
-    while playing == True:
+    while playing is True:
         print(f"You have {points} adventure points")
         print(f"What will {player} do? (Input a number)")
         choice_one: str = input(f"1. Check the door {DOOR} \n2. Climb the stairs {CLIMB} \n3. Quit game\n")
@@ -200,7 +199,6 @@ def main() -> None:
             playing = False
             quit()
 
-        
-    
+            
 if __name__ == "__main__":
     main()
