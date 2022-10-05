@@ -110,7 +110,7 @@ def new_room() -> None:
     return
 
 
-def combat(pts:int) -> int: 
+def combat(pts: int) -> int: 
     """Combat sequence for fighting the monster."""
     points: int = pts
     monster_hp: int = 20
@@ -131,7 +131,7 @@ def combat(pts:int) -> int:
         new_hp: int = 30
     else:
         new_hp: int = 20
-    while in_combat == True:
+    while in_combat is True:
         if new_hp >= 0 and in_combat is True:
             new_hp -= randint(1, 5)
             print(f"The monster did {hp - new_hp} damage!")
