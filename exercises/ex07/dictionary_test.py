@@ -17,7 +17,7 @@ def test_invert_use_case_one_many_items() -> None:
 
 
 def test_invert_use_case_two_many_items_again() -> None:
-    "Use case 2 of invert: dictionary with multiple items."
+    """Use case 2 of invert: dictionary with multiple items."""
     dict_x: dict[str, str] = {"Happy": "Water", "Okay": "Tea", "Sad": "Juice", "Mad": "Soda"}
     assert invert(dict_x) == {"Water": "Happy", "Tea": "Okay", "Juice": "Sad", "Soda": "Mad"}
 
@@ -36,7 +36,7 @@ def test_favorite_color_use_case_one_many_items() -> None:
 
 def test_favorite_color_use_case_two_many_items_with_tie() -> None:
     """Use case 2 of favorite_color: dictionary with many items and a tie."""
-    dict_x: dict[str, str] = {"Max": "purple", "Dogger": "red", "Bengal": "red", "Dino": "purple"}
+    dict_x: dict[str, str] = {"Max": "red", "Dogger": "purple", "Bengal": "red", "Dino": "purple"}
     assert favorite_color(dict_x) == "red"
 
 

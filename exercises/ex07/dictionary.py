@@ -1,6 +1,7 @@
 """EX07-Dictionary Functions."""
 __author__ = "730571410"
 
+
 def invert(dictionary: dict[str, str]) -> dict[str, str]:
     """Inverts the key and the value."""
     result: dict[str, str] = {}
