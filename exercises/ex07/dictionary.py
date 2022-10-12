@@ -24,6 +24,7 @@ def favorite_color(dictionary: dict[str, str]) -> str:
     result: str = ""
     for color in counter:
         if counter[color] > max_color:
+            max_color = counter[color]
             result = color
     return result
 

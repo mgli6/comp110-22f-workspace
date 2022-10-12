@@ -36,7 +36,7 @@ def test_favorite_color_use_case_one_many_items() -> None:
 
 def test_favorite_color_use_case_two_many_items_with_tie() -> None:
     """Use case 2 of favorite_color: dictionary with many items and a tie."""
-    dict_x: dict[str, str] = {"Max": "red", "Dogger": "purple", "Bengal": "red", "Dino": "purple"}
+    dict_x: dict[str, str] = {"Max": "purple", "Dogger": "purple", "Bengal": "red", "Dino": "red"}
     assert favorite_color(dict_x) == "purple"
 
 
